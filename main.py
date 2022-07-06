@@ -15,11 +15,10 @@ def render(a, b, c):
     plt.plot(x, y1(x))
     plt.plot(x, y2(x))
     plt.savefig('graph_var_3.png')
-    path = "graph_var_3.png"
-    return path
+    return "graph_var_3.png"
 
 
-def frame():
+def frame() -> bool:
     image = Image.open(render(1, 1, 1))
     image.thumbnail((600, 600))
     bios = io.BytesIO()
@@ -61,11 +60,11 @@ def frame():
             question.close()
             if k == 'да':
                 window.close()
-                return 0
+                return False
                 break
             del layout2, k, b, question
         if event in (None, None):
-            return 0
+            return False
             break
         if event == 'Перезапуск':
             layout2 = [
@@ -79,7 +78,7 @@ def frame():
             if k == 'да':
                 window.close()
                 G = [[0, 0], [0, 0]]
-                return 1
+                return True
                 break
 
             del layout2, k, b, question
@@ -87,6 +86,5 @@ def frame():
 
 if __name__ == '__main__':
     while True:
-        out = frame()
-        if out == 0:
+        if !frame():
             break
