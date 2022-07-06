@@ -38,7 +38,7 @@ def frame():
 
         [PySimpleGUI.Cancel()]
     ]
-    window = PySimpleGUI.Window('Кислицына Таисия 01Б-20 Вар. №3', layout)
+    window = PySimpleGUI.Window('ФИ 01Б-20 Вар. №3', layout)
     while True:
         event, values = window.read()
         if event == 'Считать':
